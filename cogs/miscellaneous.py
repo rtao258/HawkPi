@@ -32,7 +32,10 @@ class Miscellaneous(commands.Cog):
             await ctx.send(f':{emoji.name}:\t{emoji.id}')
 
     @commands.command()
-    async def spam(self, ctx, times=100, delay=2):
+    async def spam(self, ctx, times=10, delay=2):
+        if times > 10:
+            await ctx.send("Hey! Stop trying to spam this server!")
+            return
         for _ in range(times):
             await ctx.send("@21taoray is irresponsible! He has designed me with a feature to spam this server.")
             await asyncio.sleep(delay)
