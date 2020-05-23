@@ -1,11 +1,15 @@
 import discord
-import logging
 from discord.ext import commands
 
-# other
-import cogs.aops
-import cogs.amc
+import os
+import logging
+from dotenv import load_dotenv
+
 import playing
+
+# get token as environment variable
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 logging.basicConfig(level=logging.INFO)
 
@@ -39,7 +43,5 @@ if __name__ == '__main__':
         bot.load_extension(cog)
         logging.info(f"Added {cog} cog")
 
-    # get token and launch bot
-    with open('token.txt', 'r') as file:
-        token = file.read()
-        bot.run(token)
+    # launch bot
+    bot.run(TOKEN)
