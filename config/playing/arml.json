@@ -1,0 +1,22 @@
+[
+  {
+    "type": "playing",
+    "value": "ARML Individual Round"
+  },
+  {
+    "type": "playing",
+    "value": "ARML Team Round"
+  },
+  {
+    "type": "playing",
+    "value": "ARML Relay"
+  },
+  {
+    "type": "playing",
+    "value": "ARML Giant Relay"
+  },
+  {
+    "type": "playing",
+    "value": "ARML Song Contest"
+  }
+]

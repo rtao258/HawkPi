@@ -1,0 +1,1 @@
+A collection of "playing" (or similar) messages that the bot displays in the sidebar with the list of users.

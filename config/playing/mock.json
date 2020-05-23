@@ -1,0 +1,30 @@
+[
+  {
+    "type": "playing",
+    "value": "mock AMC 8"
+  },
+  {
+    "type": "playing",
+    "value": "mock AMC 10"
+  },
+  {
+    "type": "playing",
+    "value": "mock AMC 12"
+  },
+  {
+    "type": "playing",
+    "value": "mock AIME"
+  },
+  {
+    "type": "playing",
+    "value": "mock USAJMO"
+  },
+  {
+    "type": "playing",
+    "value": "mock USAMO"
+  },
+  {
+    "type": "playing",
+    "value": "mock IMO"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "type": "playing",
+    "value": "AMC 8"
+  },
+  {
+    "type": "playing",
+    "value": "AMC 10"
+  },
+  {
+    "type": "playing",
+    "value": "AMC 12"
+  },
+  {
+    "type": "playing",
+    "value": "AIME"
+  },
+  {
+    "type": "playing",
+    "value": "USAJMO"
+  },
+  {
+    "type": "playing",
+    "value": "USAMO"
+  },
+  {
+    "type": "playing",
+    "value": "IMO"
+  }
+]
