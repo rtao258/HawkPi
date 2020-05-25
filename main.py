@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
 bot = commands.Bot(
     'hp ',
     status=discord.Status.online,
-    activity=playing.activity
+    activity=playing.choose_activity()
 )
 
 

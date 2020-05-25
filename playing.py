@@ -3,31 +3,48 @@ import json
 import random
 import discord
 
-"""
-Picks a random playing message out of JSON files in the specified path.
-"""
-
 PLAYING_FOLDER = os.path.join('.', 'config', 'playing')
 
-options = []
+def get_activity_type(activity_type: str):
+    """
+    Get discord.py ActivityType based on corresponding string.
+    :param activity_type: A string that is either 'playing', 'watching', or 'listening'.
+    :type: str
+    :return: a discord.ActivityType .playing, .watching, or .listening
+    :rtype: class
+    """
+    if activity_type == 'playing':
+        return discord.ActivityType.playing
+    elif activity_type == 'watching':
+        return discord.ActivityType.watching
+    elif activity_type == 'listening':
+        return discord.ActivityType.listening
+    else:
+        raise ValueError(f"No discord.ActivityType corresponds to type {activity_type}")
 
-for file in os.scandir(PLAYING_FOLDER):
-    if file.name[-5:] == '.json':
-        with open(file.path, 'r') as f:
-            options.extend(json.loads(f.read()))
+def choose_activity(activities_folder = PLAYING_FOLDER)
+    """
+    Chooses an activity at random from the given folder.
+    :param activities_folder: 
+    :type: str, optional
+    :return: a Discord activity
+    :rtype: discord.Activity
+    """
+    options = []
 
-option = random.choice(options)
+    for file in os.scandir(activities_folder):
+        if file.name[-5:] == '.json':
+            with open(file.path, 'r') as f:
+                options.extend(json.loads(f.read()))
 
-if option['type'] == 'playing':
-    activity_type = discord.ActivityType.playing
-elif option['type'] == 'watching':
-    activity_type = discord.ActivityType.watching
-elif option['type'] == 'listening':
-    activity_type = discord.ActivityType.listening
-else:
-    raise ValueError(f"No discord.ActivityType corresponds to type {option['type']}")
+    option = random.choice(options)
 
-activity = discord.Activity(
-    type=activity_type,
-    name=option['value']
-)
+    activity_type = get_activity_type(option['type'])
+
+    return discord.Activity(
+        type=activity_type,
+        name=option['value']
+    )
+
+
+
