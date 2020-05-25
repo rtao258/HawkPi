@@ -10,11 +10,12 @@ import playing
 # get token as environment variable
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
+PREFIX = os.getenv('COMMAND_PREFIX')
 
 logging.basicConfig(level=logging.INFO)
 
 bot = commands.Bot(
-    'hp ',
+    PREFIX,
     status=discord.Status.online,
     activity=playing.choose_activity()
 )
