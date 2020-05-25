@@ -10,6 +10,7 @@ class Meta(commands.Cog):
 
     @commands.command()
     async def stats(self, ctx):
+        """Returns some stats about this bot. For debugging or for fun."""
         time_delta = time.time() - self.start_time
         result = discord.Embed(
             title="HawkPi Bot Stats",
