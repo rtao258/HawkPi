@@ -10,7 +10,7 @@ import playing
 # get token as environment variable
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-PREFIX = os.getenv('COMMAND_PREFIX')
+PREFIX = os.getenv('COMMAND_PREFIX') + ' '
 
 logging.basicConfig(level=logging.INFO)
 
@@ -20,6 +20,9 @@ bot = commands.Bot(
     activity=playing.choose_activity()
 )
 
+@bot.command
+async def cheese(ctx):
+    await ctx.send('yay cheese')
 
 @bot.event
 async def on_connect():
@@ -37,7 +40,8 @@ if __name__ == '__main__':
         'cogs.meta',
         'cogs.amc',
         'cogs.aops',
-        'cogs.miscellaneous'
+        'cogs.miscellaneous',
+        'cogs.storage',
     ]
     logging.info(f"Attempting to add {len(cogs)} cogs")
     for cog in cogs:
