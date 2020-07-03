@@ -8,6 +8,7 @@ class AMC(commands.Cog):
 
     @commands.command()
     async def score(self, ctx: commands.Context, correct, incorrect, skipped, aime=0):
+        """Calculates an AMC score / USA(J)MO index."""
         correct = int(correct)
         incorrect = int(incorrect)
         skipped = int(skipped)

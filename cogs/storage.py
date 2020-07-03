@@ -1,8 +1,3 @@
-"""
-Stores and retrieves an arbitrary string.
-Also stores and retrieves author to prevent abuse.
-"""
-
 # -*- coding: utf-8 -*-
 
 from discord.ext import commands
@@ -12,7 +7,10 @@ _author = ''
 
 
 class Storage(commands.Cog):
-    """The description for Storage goes here."""
+    """
+    Stores and retrieves an arbitrary string.
+    Also stores and retrieves author to prevent abuse.
+    """
 
     def __init__(self, bot):
         self.bot = bot

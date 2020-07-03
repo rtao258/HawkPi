@@ -12,6 +12,7 @@ class AoPS(commands.Cog):
 
     @commands.command(name="amc")
     async def get_amc_problem(self, ctx, year, test, question):
+        """Gets an AMC problem."""
         question = AMCQuestion(year, test, question)
         result = discord.Embed(
             title=question.get_question_name(),
@@ -27,6 +28,7 @@ class AoPS(commands.Cog):
 
     @commands.command()
     async def aime(self, ctx, year, test, question):
+        """Gets an AIME question."""
         question = AIMEQuestion(year, test, question)
         result = discord.Embed(
             title=question.get_question_name(),

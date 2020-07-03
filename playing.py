@@ -5,6 +5,7 @@ import discord
 
 PLAYING_FOLDER = os.path.join('.', 'config', 'playing')
 
+
 def get_activity_type(activity_type: str):
     """
     Get discord.py ActivityType based on corresponding string.
@@ -22,7 +23,8 @@ def get_activity_type(activity_type: str):
     else:
         raise ValueError(f"No discord.ActivityType corresponds to type {activity_type}")
 
-def choose_activity(activities_folder = PLAYING_FOLDER):
+
+def choose_activity(activities_folder=PLAYING_FOLDER):
     """
     Chooses an activity at random from the given folder.
     :param activities_folder: 
@@ -45,6 +47,3 @@ def choose_activity(activities_folder = PLAYING_FOLDER):
         type=activity_type,
         name=option['value']
     )
-
-
-
